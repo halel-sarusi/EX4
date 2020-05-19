@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>Halel sarusi</title>
+    </head>
+
+    <body>
+        <header dir="rtl">
+            <h1>קטין - דר!</h1>
+            <h6>*מילוי השדות באנגלית בלבד!</h6>
+        </header>
+
+        <article>
+            <form action="http://html5-book.co.il/teach/forms/get_form2.php" method="get" dir="rtl">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>שם:</label>&nbsp
+                        <input type="text" class="form-control" name="fullName" placeholder="שם מלא!" required pattern="[a-zA-Z]+[ ][a-zA-Z]+" title="אנא רשום שם מלא עם רווח אחד לפחות">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label>מייל:</label>&nbsp
+                        <input type="email" class="form-control" name="mail" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>פרופיל-פייסבוק:</label>&nbsp
+                        <input type="url" class="form-control" name="website" placeholder="סטוקרית לפנייך!">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>סיסמא-לחשבון:</label>&nbsp
+                        <input type="password" class="form-control" name="pass" placeholder="לבחירתך!" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>טלפון:</label>&nbsp
+                        <input type="tel" class="form-control" name="phone" required pattern="05?[0-9]-?[0-9]{7}" title="אנא הזן מספר סלולרי תקין">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>גיל:</label>&nbsp
+                        <select class="form-control" name="age" required>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label>ילדים:</label>&nbsp
+                        <input type="number" class="form-control" name="coffee" min="0" required value="0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span>אינטרסים: </span>&nbsp&nbsp
+                    <label><input type="checkbox" name="interests[]" value="reading book" class="checOne"> סטוץ ללילה</label>&nbsp&nbsp
+                    <label><input type="checkbox" name="interests[]" value="children" class="checOne"> קשר ארוך אך לא מחייב</label>&nbsp&nbsp
+                    <label><input type="checkbox" name="interests[]" value="sleaping" class="checOne"> חתונה עם ילדים</label>&nbsp&nbsp
+                    <label><input type="checkbox" name="interests[]" value="studing" class="checOne"> חתונה ללא ילדים</label>&nbsp&nbsp
+                </div><br>
+
+                <div class="form-group">
+                    <span>אני נמשך ל: </span>&nbsp&nbsp
+                    <label><input type="radio" name="gender" value="male"> נשים</label>&nbsp&nbsp
+                    <label><input type="radio" name="gender" value="male" checked> גברים</label>&nbsp&nbsp
+                    <label><input type="radio" name="gender" value="female"> לא סגור על עצמי</label>&nbsp&nbsp
+                </div><br>
+
+                <div class="form-group">
+                    <label>נאמנות: </label>&nbsp
+                    <input type="range" name="temper" class="custom-range" min="1" max="10" value="5" id="myRange">
+                </div><br>
+
+                <div class="form-group">
+                    <label>זמן שכנוע - למה כדאי לבחור בך?</label>&nbsp
+                    <textarea name="address" rows="2" cols="30"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-outline-danger" onclick="return v();"><span>הגיל זה רק מספר..</span><img src="images/but.png"></button>
+
+            </form>
+        </article>
+
+        <script>
+            function v(){
+                var checkedValue = null; 
+                var inputElements = document.getElementsByClassName('checOne');
+                for(var i=0; inputElements[i]; ++i){
+                    if(inputElements[i].checked){
+                        return true;
+                    }
+                }
+                alert("אנא בחר אינטרס אחד לפחות");
+                return false;
+            }
+        </script>
+    </body>
+</html>
